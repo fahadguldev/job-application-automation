@@ -2,7 +2,9 @@
   "job_titles": [
     "Full Stack Developer",
     "MERN Stack Developer",
-    "React Angular"
+    "React Angular",
+    "Associate Software Engineer",
+    "Software Engineer"
   ],
   "keywords_and_skills": [
     "React",
@@ -11,7 +13,12 @@
     "Django",
     "TypeScript",
     "Full Stack",
-    "MERN"
+    "MERN",
+    "Docker",
+    "Kubernetes",
+    "AWS",
+    "CI/CD",
+    "Langchain"
   ],
   "target_urls": [
     "https://www.linkedin.com/company/pakistan-it-jobs/",
