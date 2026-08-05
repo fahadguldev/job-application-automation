@@ -1,0 +1,50 @@
+# Environment variables & secrets
+.env
+credentials.json
+token.json
+authorized_user.json
+client_secret_*.json
+
+# Python virtual environment & cache
+venv/
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Logs & output data
+logs/*.txt
+logs/*.log
+send_log.txt
+outputs/
+tailored/
+
+# Executables & binaries
+bin/tectonic
+
+# Node.js / Dashboard dependencies & builds
+dashboard/node_modules/
+dashboard/dist/
+dashboard/.vite/
+node_modules/
+
+# OS & IDE metadata
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# LaTeX auxiliary compilation files
+*.aux
+*.log
+*.out
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz

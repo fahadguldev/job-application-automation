@@ -1,0 +1,327 @@
+\documentclass[12pt,a4paper]{article}
+
+\usepackage[a4paper, top=0.45in, bottom=0.45in, left=0.45in, right=0.45in]{geometry}
+\usepackage{paracol}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{tabularx}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{titlesec}
+\usepackage{array}
+\usepackage{mdframed}
+\usepackage{setspace}
+\usepackage{tcolorbox}
+\usepackage{calc}
+
+% \input{glyphtounicode}
+% \pdfgentounicode=1
+
+% ---------- COLORS (higher contrast, readable) ----------
+\definecolor{accentcyan}{HTML}{0B5C8C}   % deep readable blue
+\definecolor{darktext}{HTML}{111111}     % near-black for headings
+\definecolor{bodytext}{HTML}{222222}     % dark grey for body text (high contrast)
+\definecolor{lightgrey}{HTML}{F5F5F5}
+\definecolor{medgrey}{HTML}{555555}      % darker grey for dates/meta, still readable
+\definecolor{sidebarcolor}{HTML}{F7FAFB}
+\definecolor{tagbg}{HTML}{E6F0F7}
+\definecolor{tagtxt}{HTML}{0B5C8C}
+\definecolor{sectionline}{HTML}{0B5C8C}
+
+% ---------- FONTS ----------
+\usepackage{lmodern}        % Latin Modern (clean, modern serif/sans default)
+\usepackage{charter}        % Charter — classy serif, good for resumes
+\usepackage{mathptmx}       % Times-like serif
+\usepackage{helvet}\renewcommand{\familydefault}{\sfdefault}  % Sans-serif (Helvetica-like)
+\usepackage{cmbright}       % Clean sans-serif, modern look
+\usepackage{libertine}      % Linux Libertine — elegant serif, very readable
+
+% ---------- SPACING ----------
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\pagestyle{empty}
+
+% ---------- SECTION STYLE (left column) ----------
+\newcommand{\leftsection}[1]{%
+  \vspace{6pt}%
+  {\color{accentcyan}\Large\bfseries #1}\\[-2pt]%
+  {\color{sectionline}\rule{\linewidth}{1pt}}%
+  \vspace{3pt}%
+}
+
+% ---------- SECTION STYLE (right column) ----------
+\newcommand{\rightsection}[1]{%
+  \vspace{6pt}%
+  {\color{accentcyan}\Large\bfseries #1}\\[-2pt]%
+  {\color{sectionline}\rule{\linewidth}{1pt}}%
+  \vspace{3pt}%
+}
+
+% ---------- SKILL TAG ----------
+\newcommand{\skilltag}[1]{%
+  \colorbox{tagbg}{\textcolor{bodytext}{\footnotesize\strut~#1~}}~%
+}
+
+
+
+% ---------- SKILL CATEGORY ----------
+\newcommand{\skillcat}[2]{%
+  \vspace{3pt}%
+  {\small\bfseries\color{darktext} #1}\\[2pt]%
+  #2\\[1pt]%
+}
+
+% ---------- JOB HEADING ----------
+\newcommand{\jobheading}[4]{%
+  % #1=title, #2=company, #3=date, #4=location
+  \vspace{4pt}%
+  {\bfseries\color{darktext} #1} \hfill {\small\color{medgrey} #3}\\%
+  {\small\color{accentcyan} #2} \hfill {\small\color{medgrey} #4}%
+  \vspace{2pt}%
+}
+
+% ---------- PROJECT HEADING ----------
+\newcommand{\projheading}[2]{%
+  % #1=title, #2=link text
+  \vspace{5pt}%
+  {\bfseries\color{darktext} #1}%
+  \ifx&#2&\else~{\small\color{accentcyan}[#2]}\fi%
+  \vspace{1pt}%
+}
+
+% ---------- BULLET LIST ----------
+\newenvironment{cvitems}{%
+  \begin{itemize}[leftmargin=1em, itemsep=0pt, parsep=0pt, topsep=2pt, label={\color{accentcyan}\tiny$\bullet$}]%
+  \small\color{bodytext}%
+}{%
+  \end{itemize}%
+}
+
+% ---------- EDU HEADING ----------
+\newcommand{\eduheading}[4]{%
+  % #1=degree, #2=inst, #3=gpa-or-grade, #4=date
+  \vspace{4pt}%
+  {\small\bfseries\color{darktext} #1}\\%
+  {\small\color{accentcyan} #2}\\%
+  {\small\color{medgrey} #4 \ifx&#3&\else$\cdot$ #3\fi}%
+  \vspace{2pt}%
+}
+
+%% ================================================================
+\begin{document}
+
+% ===================== HEADER =====================
+\begin{tikzpicture}[remember picture, overlay]
+  % no background block – clean white header like the screenshot
+\end{tikzpicture}
+
+% \begin{minipage}[t]{\textwidth}
+%   {\huge\bfseries\color{darktext} MUHAMMAD FAHAD}\\[2pt]
+%   {\large\color{accentcyan} Full Stack Software Engineer}\\[2pt]
+%   {\small\color{medgrey}
+%     +92-3329296026
+%     $\cdot$
+%     \href{mailto:devfahad785@gmail.com}{\color{medgrey}devfahad785@gmail.com}
+%     $\cdot$
+%     \href{https://devrfgul.vercel.app/}{\color{accentcyan}Portfolio}
+%     $\cdot$
+%     \href{https://www.linkedin.com/in/fahad785}{\color{accentcyan}LinkedIn}
+%     $\cdot$
+%     \href{https://github.com/dev-fahad785/}{\color{accentcyan}GitHub}
+%     $\cdot$
+%     Lahore
+%   }
+% \end{minipage}
+\begin{minipage}[t]{\textwidth}
+  {\huge\bfseries\color{darktext} MUHAMMAD FAHAD}\\[2pt]
+  {\large\color{accentcyan} Full Stack Software Engineer || MERN || MEAN}\\[2pt]
+  {\small\color{medgrey}
+    +92-3329296026
+    $\cdot$
+    \href{mailto:devfahad785@gmail.com}{\color{accentcyan}devfahad785@gmail.com}
+    $\cdot$
+    \href{https://devrfgul.vercel.app/}{\color{accentcyan}devrfgul.vercel.app}
+    $\cdot$
+    \href{https://www.linkedin.com/in/fahadguldev}{\color{accentcyan}linkedin.com/in/fahad785}
+    $\cdot$
+    \href{https://github.com/fahadguldev/}{\color{accentcyan}github.com/fahadguldev}
+  }
+\end{minipage}
+
+\vspace{6pt}
+\noindent{\color{sectionline}\rule{\textwidth}{1.5pt}}
+\vspace{4pt}
+
+% ===================== TWO COLUMNS =====================
+\setlength{\columnsep}{14pt}
+\columnratio{0.62}
+\begin{paracol}{2}
+
+% ============================================================
+% LEFT COLUMN
+% ============================================================
+
+\leftsection{SUMMARY}
+{\small\color{bodytext}
+I'm a Full Stack Software Engineer building practical solutions that make everyday tasks easier.
+I've worked with the MERN, MEAN stack and Django to create tools like a smart university
+transport system for my campus and a productivity app for people with short-term memory
+challenges, aligning my experience with office-based collaboration and deployment needs.
+I focus on writing clean, scalable code and building user-friendly experiences that solve real problems.
+}
+
+\vspace{2pt}
+\leftsection{WORK EXPERIENCE}
+
+\jobheading{Junior Software Engineer}{AitchTech, Bahawalpur}{July 2025 -- Present}{}
+
+\vspace{3pt}
+{\small\bfseries\color{darktext} Magnt -- Enterprise AI Chat Application}
+\begin{cvitems}
+  \item Built 6 interactive chart types (line, bar, pie, donut, graph, dot) using Vega Charts.
+  \item Engineered \textbf{3-theme system} (light, dark, Magnt-branded) from scratch.
+  \item Delivered bilingual \textbf{LTR/RTL layout} support for English and Arabic interfaces.
+\end{cvitems}
+
+\vspace{2pt}
+{\small\bfseries\color{darktext} VaultX -- Blockchain Based NFT Platform}
+\begin{cvitems}
+  \item Integrated Privy Wallet to enable secure wallet connection and user authentication.
+  \item Implemented transaction signing and on-chain submission for secure blockchain data storage.
+  \item Connected frontend to backend REST APIs for dynamic, real-time data handling.
+  \item Replaced Zustand with \textbf{SWR}, improving data fetching, caching, and revalidation.
+\end{cvitems}
+
+\leftsection{PERSONAL PROJECTS}
+
+\projheading{Smart University Bus Information System (FYP)}{\href{https://github.com/dev-fahad785/FYP-SUBIS}{GitHub}}
+\begin{cvitems}
+  \item Digitized a university's paper-based transportation schedule into a live web platform with an admin panel for route/stop management and telemetry logging.
+  \item Architected a full-stack \textbf{distributed microservices system} (NestJS/
+  PostgreSQL for real-time tracking, Node.js/MongoDB for timetable management) with a React frontend.
+  \item Implemented real-time bus tracking with a custom user clustering algorithm for crowd estimation, automated student alerts and ETA calculations.
+  \item Built \textbf{Redis caching} for OTP verification and timetable data, reducing database queries across both services.
+  \item Containerized all services with \textbf{Docker}, authored separate Compose files for production and local development environments.
+  \item Set up a \textbf{GitHub Actions} CI/CD pipeline triggered only on bus-tracking service changes -- builds Docker image and redeploys to AWS EC2 automatically.
+  \item Deployed across \textbf{hybrid cloud infrastructure}: bus-tracking on AWS EC2, timetable and frontend on Vercel.
+\end{cvitems}
+
+\projheading{Task AI Studio (MERN)}{\href{https://github.com/dev-fahad785/task-manager}{GitHub}}
+\begin{cvitems}
+  \item Built a productivity app to help users with short-term memory challenges track tasks and receive timely reminders.
+  \item Implemented AI-powered task scheduling that automatically sorts tasks by priority and deadlines to optimize productivity.
+  \item Developed a Node.js-based \textbf{WhatsApp bot} that sends task reminders every 3 hours.
+  \item Enabled WhatsApp-based task retrieval using the \texttt{whatsapp-web
+  js} library.
+\end{cvitems}
+
+\projheading{Auto Parts Marketplace (MERN)}{\href{https://github.com/fahadguldev/auto-hub}{GitHub}}
+\begin{cvitems}
+  \item Developed a multi-vendor automobile spare parts marketplace using \textbf{MongoDB, Express.js, React, Node.js, Tailwind CSS,} and \textbf{Vite}.
+  \item Implemented \textbf{role-based authentication and authorization} (User, Dealer, Admin) with secure JWT cookie-based authentication and dealer
+  /store approval workflows.
+  \item Built complete CRUD modules for products, stores, orders, blogs, inventory, and order management, integrating \textbf{Cloudinary} for image storage.
+  \item Developed advanced e-commerce features including product search, filtering, sorting, comparison, shopping cart, and a fully responsive user interface.
+  \item Integrated an \textbf{AI-powered troubleshooting chatbot} that analyzes vehicle issues, recommends DIY fixes when appropriate, and suggests compatible spare parts based on user-reported symptoms.
+  \item Deployed the application on \textbf{Vercel} with a serverless-ready Express.js backend.
+\end{cvitems}
+
+% ============================================================
+% RIGHT COLUMN
+% ============================================================
+\switchcolumn
+
+\rightsection{EDUCATION}
+
+\eduheading{BS in Computer Science}{The Islamia University of Bahawalpur}{}{}
+\begin{cvitems}
+  \item Appreciation Certificate for serving as Official Member of the IUB Publication Society as a Designer/Editor.
+  \item Shield in recognition of contribution to the BLCF.
+\end{cvitems}
+
+% \vspace{2pt}
+% \eduheading{F.Sc (Pre-Engineering)}{Military College Sui}{95\%}{May 2016 -- Jul 2021}
+% \begin{cvitems}
+%   \item Appreciation Certificate for Drama Club participation.
+%   \item 3rd Position in Inter House Painting \& Calligraphy Competition.
+% \end{cvitems}
+
+\rightsection{SKILLS}
+
+\skillcat{Frontend Technologies}{%
+  \skilltag{ReactJS}
+  \skilltag{AngularJS}
+}
+
+\skillcat{Backend Technologies}{%
+  \skilltag{NestJS}
+  \skilltag{NodeJS}
+  \skilltag{Django}
+  \skilltag{ExpressJS}
+  \skilltag{REST APIs}
+}
+
+\skillcat{Databases}{%
+  \skilltag{MongoDB}
+  \skilltag{PostgreSQL}
+  \skilltag{Redis}
+}
+
+\skillcat{Cloud Computing}{%
+  % \skilltag{AWS Basics}
+  \skilltag{IAM}
+  \skilltag{AMI}
+  \skilltag{EC2}
+  \skilltag{S3}
+  \skilltag{RDS}
+  \skilltag{Aurora}
+  \skilltag{DynamoDB}
+  \skilltag{Route53}
+  \skilltag{Lambda}
+  \skilltag{CloudFront}
+  \skilltag{CloudFormation}
+  \skilltag{Load Balancer}
+  \skilltag{ASG}
+}
+
+\skillcat{Deployment Platforms}{%
+  \skilltag{Vercel}
+  \skilltag{Netlify}
+  \skilltag{Render}
+  \skilltag{Digital Ocean}
+}
+
+\skillcat{Version Control}{%
+  \skilltag{Git}
+  \skilltag{GitHub}
+}
+
+\skillcat{DevOps \& CI/CD}{%
+  \skilltag{Docker}
+  \skilltag{GitHub Actions}
+  \skilltag{CI/CD Pipelines}
+}
+
+
+\rightsection{CERTIFICATIONS}
+
+{\small
+\begin{itemize}[leftmargin=0pt, label={}, itemsep=3pt, parsep=0pt, topsep=2pt]
+  \item \href{https://www.freecodecamp.org/certification/Fahad785/responsive-web-design}{\color{accentcyan}Responsive Web Design}\\
+        {\small\color{medgrey} FreeCodeCamp $\cdot$ Sep 2023}
+  \item \href{https://www.coursera.org/account/accomplishments/verify/NMHE8G2SDCVB}{\color{accentcyan}Intro to Git and GitHub}\\
+        {\small\color{medgrey} Google / Coursera $\cdot$ Dec 2023}
+  \item \href{https://www.coursera.org/account/accomplishments/certificate/FK9BEVHSAW5M}{\color{accentcyan}React Basics}\\
+        {\small\color{medgrey} Meta / Coursera $\cdot$ Jan 2024}
+  \item \href{https://www.datacamp.com/completed/statement-of-accomplishment/course/e4540d6a5b2e9ca52e0016c3413aebb752c1ebbd}{\color{accentcyan}Intro to Python}\\
+        {\small\color{medgrey} DataCamp $\cdot$ Jan 2025}
+  \item \href{https://www.datacamp.com/completed/statement-of-accomplishment/course/ae42b40c211f763da228c1d3b1c9829462c78ea0}{\color{accentcyan}Writing Efficient Code in Python}\\
+        {\small\color{medgrey} DataCamp $\cdot$ Jan 2025}
+  \item \href{https://www.datacamp.com/completed/statement-of-accomplishment/course/8196a10f16e23c773fae6d00088d25beb51c8104}{\color{accentcyan}Exploratory Data Analysis}\\
+        {\small\color{medgrey} DataCamp $\cdot$ Jan 2025}
+\end{itemize}
+}
+
+\end{paracol}
+
+\end{document}

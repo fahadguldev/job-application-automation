@@ -1,0 +1,27 @@
+{
+  "job_titles": [
+    "Full Stack Developer",
+    "MERN Stack Developer",
+    "React Angular"
+  ],
+  "keywords_and_skills": [
+    "React",
+    "Node.js",
+    "Python",
+    "Django",
+    "TypeScript",
+    "Full Stack",
+    "MERN"
+  ],
+  "target_urls": [
+    "https://www.linkedin.com/company/pakistan-it-jobs/",
+    "https://www.linkedin.com/company/techjobsradar/",
+    "https://www.linkedin.com/company/hire-nexus/",
+    "https://www.linkedin.com/company/software-house-jobs/"
+  ],
+  "locations": [
+    "Pakistan",
+    "Remote"
+  ],
+  "match_threshold": 60
+}

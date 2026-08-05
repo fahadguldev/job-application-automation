@@ -1,0 +1,18 @@
+[project]
+name = "job-application-automation"
+version = "1.0.0"
+description = "AI-Driven Autonomous Job Evaluation, Resume Tailoring, Google Sheets Tracking, and Gmail API Dispatch System"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "groq>=0.9.0",
+    "gspread>=6.0.0",
+    "google-api-python-client>=2.198.0",
+    "google-auth-httplib2>=0.4.0",
+    "google-auth-oauthlib>=1.4.0",
+    "python-docx>=1.1.0",
+    "pypdf>=4.0.0",
+    "python-dotenv>=1.0.0",
+    "requests>=2.31.0",
+    "beautifulsoup4>=4.12.0",
+]

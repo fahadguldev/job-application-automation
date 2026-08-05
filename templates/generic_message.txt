@@ -1,0 +1,11 @@
+Hi {person},
+I'm Fahad, a Junior Full-Stack Engineer at AitchTech with a year of experience shipping production features across the MERN/MEAN stack, from AI chat apps to blockchain platforms.
+My Final Year Project, a microservices-based Smart Bus System, was adopted and deployed live by my university, which I'm particularly proud of.
+I'm selectively exploring what's next and think your company could be a great fit.
+Best Regards,
+Muhammad Fahad,
+
+https://www.linkedin.com/in/fahad785
+https://github.com/dev-fahad785
+https://devrfgul.vercel.app/
+03329296026
